@@ -242,15 +242,22 @@
                                 <text x="60" y="250" text-anchor="middle" fill="#6B21A8" font-size="11" font-weight="bold" font-family="Vazirmatn">محصول هم‌افزا</text>
                             </g>
 
-                            <!-- Animated Flowing Pulses along edges -->
-                            <circle cx="150" cy="50" r="3" fill="#D97706">
-                                <animateMotion path="M 0,0 L 0,100" dur="3s" repeatCount="indefinite" />
+                            <!-- Animated Flowing Pulses (Humanities & Engineering -> Design Thinking -> Product) -->
+                            
+                            <!-- Stream 1: Humanities (Top) -> DT Center -> Synergistic Product (Bottom Left) -->
+                            <circle cx="150" cy="50" r="4.5" fill="#D97706" class="shadow">
+                                <animateMotion path="M 0,0 L 0,100 L -90,160" dur="3.6s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="linear" />
                             </circle>
-                            <circle cx="150" cy="150" r="3" fill="#0891B2">
-                                <animateMotion path="M 0,0 L 90,60" dur="3.5s" repeatCount="indefinite" />
+                            <circle cx="150" cy="50" r="3" fill="#F59E0B" opacity="0.75">
+                                <animateMotion path="M 0,0 L 0,100 L -90,160" dur="3.6s" begin="0.9s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="linear" />
                             </circle>
-                            <circle cx="150" cy="150" r="3" fill="#9333EA">
-                                <animateMotion path="M 0,0 L -90,60" dur="4s" repeatCount="indefinite" />
+
+                            <!-- Stream 2: Engineering (Bottom Right) -> DT Center -> Synergistic Product (Bottom Left) -->
+                            <circle cx="240" cy="210" r="4.5" fill="#0891B2" class="shadow">
+                                <animateMotion path="M 0,0 L -90,-60 L -180,0" dur="3.6s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="linear" />
+                            </circle>
+                            <circle cx="240" cy="210" r="3" fill="#06B6D4" opacity="0.75">
+                                <animateMotion path="M 0,0 L -90,-60 L -180,0" dur="3.6s" begin="0.9s" repeatCount="indefinite" keyTimes="0;0.5;1" calcMode="linear" />
                             </circle>
 
                             <!-- Gradients -->
@@ -272,7 +279,7 @@
                             <span class="text-[10px] text-slate-400">کلیک بر روی گره‌ها</span>
                         </div>
                         <p id="desc-body" class="text-[11px] leading-relaxed text-slate-500">
-                            فرآیندی ۵ مرحله‌ای که بینش‌های کیفی انسانی را به مسئله‌های ساختاریافته و قابل حل توسط کدهای مهندسی تبدیل می‌کند.
+                            ورودی‌های خرد انسانی و فناوری مهندسی پس از عبور و پردازش در موتور تفکر طراحی، به محصول نهایی هم‌افزا تبدیل می‌شوند.
                         </p>
                     </div>
 
