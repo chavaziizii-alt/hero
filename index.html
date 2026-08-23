@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هیرو سکشن مینیمال - علوم انسانی، تفکر طراحی، مهندسی</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            humanities: '#D97706', // Warm Amber
+                            dt: '#6366F1',         // Indigo / Bridge
+                            engineering: '#0891B2',// Cyan
+                            dark: '#0F172A',
+                            muted: '#64748B',
+                            lightBg: '#FAFAF9'
+                        }
+                    },
+                    fontFamily: {
+                        vazir: ['Vazirmatn', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Font: Vazirmatn -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #FAFAF9;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+
+        /* Subtle organic floating animation for the DT element */
+        @keyframes subtleFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-8px) rotate(1deg);
+            }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.25; transform: scale(1); }
+            50% { opacity: 0.45; transform: scale(1.05); }
+        }
+
+        @keyframes orbitSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .animate-subtle-float {
+            animation: subtleFloat 7s ease-in-out infinite;
+        }
+
+        .animate-pulse-glow {
+            animation: pulseGlow 6s ease-in-out infinite;
+        }
+
+        .animate-orbit {
+            animation: orbitSlow 25s linear infinite;
+            transform-origin: center;
+        }
+
+        /* Glass minimal panel */
+        .glass-minimal {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        /* Gradient Text */
+        .gradient-text-subtle {
+            background: linear-gradient(135deg, #0F172A 30%, #4338CA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#FAFAF9] text-slate-900 flex flex-col justify-between selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Ambient Subtle Background Elements -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-amber-100/40 rounded-full blur-3xl"></div>
+        <div class="absolute top-[20%] left-[-10%] w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-[-10%] left-[20%] w-[500px] h-[500px] bg-cyan-100/30 rounded-full blur-3xl"></div>
+    </div>
+
+    <header class="relative z-20 max-w-7xl mx-auto w-full px-6 py-6 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-bold text-lg shadow-md transition-transform group-hover:scale-105">
+                <i data-lucide="infinity" class="w-5 h-5 text-indigo-300"></i>
+            </div>
+            <div class="flex flex-col">
+                <span class="font-extrabold text-lg tracking-tight text-slate-900">استودیو <span class="text-indigo-600">هم‌افزا</span></span>
+                <span class="text-[11px] text-slate-500 font-medium -mt-1">علوم انسانی × تفکر طراحی × مهندسی</span>
+            </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 bg-white/80 backdrop-blur-md px-6 py-2.5 rounded-full border border-slate-200/80 shadow-sm">
+            <a href="#about" class="hover:text-indigo-600 transition-colors">درباره متدولوژی</a>
+            <a href="#pillars" class="hover:text-indigo-600 transition-colors">سه‌گانه هم‌افزایی</a>
+            <a href="#cases" class="hover:text-indigo-600 transition-colors">نمونه پروژه‌ها</a>
+            <a href="#contact" class="hover:text-indigo-600 transition-colors">ارتباط با ما</a>
+        </nav>
+
+        <!-- CTA -->
+        <div>
+            <a href="#start" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm px-5 py-2.5 rounded-full transition-all shadow-sm hover:shadow-md active:scale-95">
+                <span>شروع گفت‌وگو</span>
+                <i data-lucide="arrow-left" class="w-4 h-4 text-slate-400"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-7xl mx-auto w-full px-6 py-12 lg:py-20 my-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            
+            <!-- RIGHT COLUMN (Text & Slogan - 7 Columns) -->
+            <div class="lg:col-span-7 flex flex-col items-start text-right">
+                
+                <!-- Minimal Category Pill -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-700 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-indigo-600"></span>
+                    <span>رویکرد نوآورانه بین‌رشته‌ای</span>
+                </div>
+
+                <!-- Main Slogan / Headline -->
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.25] sm:leading-[1.2] tracking-tight mb-6">
+                    پیوند <span class="text-amber-600 underline decoration-amber-200 underline-offset-8">خرد علوم انسانی</span> و <span class="text-cyan-700 underline decoration-cyan-200 underline-offset-8">دقت مهندسی</span> 
+                    <br class="hidden sm:inline"/>
+                    در بستر <span class="text-indigo-600">تفکر طراحی</span>
+                </h1>
+
+                <!-- Sub-Slogan / Description -->
+                <p class="text-slate-600 text-base sm:text-lg font-normal leading-relaxed max-w-2xl mb-10">
+                    ما محصولات و سیستم‌های پیچیده را فقط بر پایه کد و تکنولوژی نمی‌سازیم؛ ابتدا از طریق <strong class="text-slate-900 font-semibold">علوم انسانی</strong> رفتار و نیاز واقعی مخاطب را عمیقاً می‌فهمیم، با متدولوژی <strong class="text-indigo-600 font-semibold">تفکر طراحی (Design Thinking)</strong> مسئله را بازتعریف کرده و سپس با <strong class="text-slate-900 font-semibold">قدرت مهندسی</strong> آن را به واقعیت تبدیل می‌کنیم.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto mb-10">
+                    <a href="#consultation" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm px-7 py-3.5 rounded-full transition-all shadow-lg shadow-indigo-600/20 active:scale-95">
+                        <span>سفارش طراحی متقاطع</span>
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#learn-more" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-medium text-sm px-7 py-3.5 rounded-full border border-slate-200 shadow-sm transition-all active:scale-95">
+                        <span>چگونه کار می‌کنیم؟</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+                    </a>
+                </div>
+
+                <!-- Key Mini Highlights -->
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200/80 w-full max-w-xl">
+                    <div>
+                        <span class="block text-xl sm:text-2xl font-black text-amber-600">انسان‌محور</span>
+                        <span class="text-xs text-slate-500 mt-0.5 block">فهم عمیق بافت فرهنگی</span>
+                    </div>
+                    <div>
+                        <span class="block text-xl sm:text-2xl font-black text-indigo-600">۵ مرحله</span>
+                        <span class="text-xs text-slate-500 mt-0.5 block">فرآیند متدولوژیک DT</span>
+                    </div>
+                    <div>
+                        <span class="block text-xl sm:text-2xl font-black text-cyan-600">دقت ساختار</span>
+                        <span class="text-xs text-slate-500 mt-0.5 block">پیاده‌سازی بی‌نقص مهندسی</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- LEFT COLUMN (Minimal Animated Design Thinking Graphic - 5 Columns) -->
+            <div class="lg:col-span-5 flex justify-center items-center relative">
+                
+                <!-- Glowing Ambient Disc -->
+                <div class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-indigo-200/40 rounded-full blur-2xl animate-pulse-glow"></div>
+
+                <!-- Main Floating Design Thinking Interactive Element Container -->
+                <div class="relative w-full max-w-md aspect-square rounded-3xl bg-white/60 backdrop-blur-xl border border-white/80 shadow-xl shadow-slate-200/50 p-6 flex flex-col justify-between animate-subtle-float">
+                    
+                    <!-- Top Badge of the Graphic -->
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="flex h-2.5 w-2.5 rounded-full bg-indigo-600"></span>
+                            <span class="text-xs font-bold text-slate-800 tracking-wider">مدل هم‌افزایی سه گانه</span>
+                        </div>
+                        <span class="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-600">DESIGN THINKING</span>
+                    </div>
+
+                    <!-- Center Animated Graphic (Interlocking Tri-Pillar Node System) -->
+                    <div class="relative my-auto flex items-center justify-center py-6">
+                        
+                        <!-- SVG Graphic for Design Thinking Flow -->
+                        <svg class="w-full h-64 overflow-visible" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            
+                            <!-- Connecting Background Triangles / Paths -->
+                            <path d="M 150,50 L 240,210 L 60,210 Z" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="4 4" />
+                            
+                            <!-- Central Dynamic Loop (Design Thinking Core) -->
+                            <g class="animate-orbit">
+                                <circle cx="150" cy="150" r="45" stroke="url(#dt-gradient)" stroke-width="3" stroke-dasharray="12 6" fill="none" />
+                            </g>
+
+                            <!-- Center Point: Design Thinking Node -->
+                            <g class="transition-transform duration-300 hover:scale-110 cursor-pointer" onclick="setActiveNode('dt')">
+                                <circle cx="150" cy="150" r="28" fill="#EEF2FF" stroke="#6366F1" stroke-width="2" />
+                                <circle cx="150" cy="150" r="6" fill="#6366F1" />
+                                <text x="150" y="190" text-anchor="middle" fill="#4338CA" font-size="11" font-weight="bold" font-family="Vazirmatn">تفکر طراحی</text>
+                            </g>
+
+                            <!-- Node 1: Humanities (Top) -->
+                            <g class="transition-transform duration-300 hover:scale-110 cursor-pointer" onclick="setActiveNode('humanities')">
+                                <circle cx="150" cy="50" r="24" fill="#FEF3C7" stroke="#D97706" stroke-width="2" />
+                                <path d="M144 46C144 43 147 40 150 40C153 40 156 43 156 46C156 49 153 52 150 52" stroke="#B45309" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="150" cy="56" r="2" fill="#B45309"/>
+                                <text x="150" y="20" text-anchor="middle" fill="#92400E" font-size="11" font-weight="bold" font-family="Vazirmatn">علوم انسانی</text>
+                            </g>
+
+                            <!-- Node 2: Engineering (Bottom Right) -->
+                            <g class="transition-transform duration-300 hover:scale-110 cursor-pointer" onclick="setActiveNode('engineering')">
+                                <circle cx="240" cy="210" r="24" fill="#E0F2FE" stroke="#0891B2" stroke-width="2" />
+                                <rect x="233" y="203" width="14" height="14" rx="3" stroke="#0E7490" stroke-width="2" fill="none"/>
+                                <text x="240" y="250" text-anchor="middle" fill="#155E75" font-size="11" font-weight="bold" font-family="Vazirmatn">علوم مهندسی</text>
+                            </g>
+
+                            <!-- Node 3: Synthesis Output (Bottom Left) -->
+                            <g class="transition-transform duration-300 hover:scale-110 cursor-pointer" onclick="setActiveNode('solution')">
+                                <circle cx="60" cy="210" r="24" fill="#F3E8FF" stroke="#9333EA" stroke-width="2" />
+                                <path d="M53 210L67 210M60 203L60 217" stroke="#7E22CE" stroke-width="2" stroke-linecap="round"/>
+                                <text x="60" y="250" text-anchor="middle" fill="#6B21A8" font-size="11" font-weight="bold" font-family="Vazirmatn">محصول هم‌افزا</text>
+                            </g>
+
+                            <!-- Animated Flowing Pulses along edges -->
+                            <circle cx="150" cy="50" r="3" fill="#D97706">
+                                <animateMotion path="M 0,0 L 0,100" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="150" cy="150" r="3" fill="#0891B2">
+                                <animateMotion path="M 0,0 L 90,60" dur="3.5s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="150" cy="150" r="3" fill="#9333EA">
+                                <animateMotion path="M 0,0 L -90,60" dur="4s" repeatCount="indefinite" />
+                            </circle>
+
+                            <!-- Gradients -->
+                            <defs>
+                                <linearGradient id="dt-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#6366F1" />
+                                    <stop offset="50%" stop-color="#A855F7" />
+                                    <stop offset="100%" stop-color="#06B6D4" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                    </div>
+
+                    <!-- Interactive Bottom Info Card inside the Graphic Box -->
+                    <div id="graphic-description" class="bg-white/80 rounded-xl p-3 border border-slate-100 text-xs text-slate-600 transition-all duration-300">
+                        <div class="font-bold text-slate-800 mb-0.5 flex items-center justify-between">
+                            <span id="desc-title" class="text-indigo-600">موتور تفکر طراحی (Design Thinking)</span>
+                            <span class="text-[10px] text-slate-400">کلیک بر روی گره‌ها</span>
+                        </div>
+                        <p id="desc-body" class="text-[11px] leading-relaxed text-slate-500">
+                            فرآیندی ۵ مرحله‌ای که بینش‌های کیفی انسانی را به مسئله‌های ساختاریافته و قابل حل توسط کدهای مهندسی تبدیل می‌کند.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Minimal Footer Bar -->
+    <footer class="relative z-10 border-t border-slate-200/60 bg-white/40 py-4 px-6 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span>© ۲۰۲۶ استودیو هم‌افزا — ترکیب هوشمندانه انسان، دیزاین و تکنولوژی</span>
+            <div class="flex items-center gap-4 text-slate-400">
+                <span class="hover:text-slate-600 transition-colors">همدلی</span>
+                <span>•</span>
+                <span class="hover:text-slate-600 transition-colors">ایده‌پردازی</span>
+                <span>•</span>
+                <span class="hover:text-slate-600 transition-colors">ساخت و اجرا</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Node description data for interactive feedback
+        const nodeData = {
+            dt: {
+                title: "موتور تفکر طراحی (Design Thinking)",
+                body: "فرآیندی ۵ مرحله‌ای (همدلی، تعریف، ایده‌پردازی، پروتوتایپ، تست) که بینش‌های انسانی را به راه‌حل‌های ملموس تبدیل می‌کند.",
+                color: "text-indigo-600"
+            },
+            humanities: {
+                title: "علوم انسانی (شالوده شناختی)",
+                body: "روانشناسی کاربردی، جامعه‌شناسی و مردم‌نگاری برای کشف دغدغه‌های حقیقی و پنهان انسان پیش از ساخت تکنولوژی.",
+                color: "text-amber-600"
+            },
+            engineering: {
+                title: "علوم مهندسی (قدرت پیاده‌سازی)",
+                body: "معماری سیستم، کدنویسی تمیز، هوشمندسازی و ساختارهای مقیاس‌پذیری که ایده را به محتوای واقعی بدل می‌سازند.",
+                color: "text-cyan-600"
+            },
+            solution: {
+                title: "محصول هم‌افزا (Synergistic Solution)",
+                body: "خروجی نهایی: محصولی که هم کاربر عاشق کار با آن است (انسان‌محور) و هم از نظر فنی دقیق، پایدار و قدرتمند است.",
+                color: "text-purple-600"
+            }
+        };
+
+        function setActiveNode(key) {
+            const data = nodeData[key];
+            if (!data) return;
+
+            const titleEl = document.getElementById('desc-title');
+            const bodyEl = document.getElementById('desc-body');
+
+            titleEl.className = `font-bold text-xs mb-0.5 ${data.color}`;
+            titleEl.textContent = data.title;
+            bodyEl.textContent = data.body;
+        }
+    </script>
+</body>
+</html>
